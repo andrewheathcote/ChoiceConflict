@@ -16,6 +16,16 @@ q <- data.frame(fit = q$label, term = q$par, `group mean (median)` = round(q$mu_
                 `subjects with posterior median > 0` = round(q$subj_median_pos, 3), `subjects P(> 0) > .95` = round(q$subj_P95_pos, 3),
                 `subjects P(< 0) > .95` = round(q$subj_P95_neg, 3), check.names = FALSE)
 md(q, "S3_1.md", "**Table S3.1.** Posterior direction of the congruency terms that were estimated without an order restriction: Simon LNR m_CIincong (the original fits, before the Q6 refits restricted it) and Stroop WDM/DDM v_CIcong. The predicted direction is positive.")
+## S3.2 every fitted conflict variant and its number of parameters per subject, by task (01_specs/describe_specs.R)
+sd <- read_tab("specs_designs.csv"); sd <- sd[sd$task != "Choice", ]
+mk <- read_tab("mech_key.csv"); sd$mech <- mk$mech[match(sd$spec, mk$spec)]
+sd$variant <- sub("^[A-Za-z]+_[A-Z]+_", "", sd$spec)
+w <- reshape(sd[, c("arch", "variant", "mech", "task", "n_par")], idvar = c("arch", "variant", "mech"), timevar = "task", direction = "wide")
+names(w) <- sub("^n_par\\.", "", names(w)); for (tk in TASKS) if (!tk %in% names(w)) w[[tk]] <- NA
+w$nm <- nchar(w$mech)
+w <- w[order(match(w$arch, c("LBA", "RDM", "LNR", "WDM", "DDM")), w$nm, w$variant), ]
+w <- data.frame(architecture = w$arch, variant = w$variant, mechanisms = w$mech, Simon = w$Simon, Stroop = w$Stroop, ANT = w$ANT, check.names = FALSE)
+md(w, "S3_2.md", sprintf("**Table S3.2.** Every fitted conflict variant (%d specifications) and its number of parameters per participant in each task; blank: not fitted in that task. Variant: the archive's name (S3); mechanisms: the paper's notation. Specifications in `inputs/specs/`, formulas in `derived/tables/specs_designs.csv`.", nrow(sd)))
 ## S6.1 classes by task and architecture
 D <- read_tab("display_jm.csv")
 lev <- c("converged", "ridge-only, shown as converged", "converged, subject-mode caveat", "ridge-only, Rhat >= 1.5", "not converged")
