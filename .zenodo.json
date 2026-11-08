@@ -1,0 +1,24 @@
+{
+  "title": "ChoiceConflict: code and supplement for 'Racing to Controlling Decision Conflict'",
+  "upload_type": "software",
+  "description": "<p>Code, supplementary materials and figures for Heathcote, Metz, Stevenson and Matzke, 'Racing to Controlling Decision Conflict'. Five evidence-accumulation models (LBA, RDM, LNR, WDM, DDM) of simple choice and of the Simon, Stroop and attention-network tasks (data: Eisenberg et al., 2019), fitted hierarchically with EMC2/DMC2. The release holds one entry point per stage (data, classification, model selection, floors, predictives, figures, model recovery), a local fitting driver, the supplement (Word, with its Markdown and LaTeX source), and, as release assets, source tarballs of the eleven EMC2/DMC2 builds that made the fits. The fits, data, predictives and plot-ready tables are in the companion data record.</p>",
+  "creators": [
+    {"name": "Heathcote, Andrew", "affiliation": "University of Newcastle, Australia; University of Amsterdam", "orcid": "0000-0003-4324-5537"},
+    {"name": "Metz, Marit", "affiliation": "University of Amsterdam", "orcid": "0009-0003-9648-7457"},
+    {"name": "Stevenson, Niek", "affiliation": "University of Amsterdam", "orcid": "0000-0003-3206-7544"},
+    {"name": "Matzke, Dora", "affiliation": "University of Amsterdam", "orcid": "0000-0003-1990-0175"}
+  ],
+  "license": "GPL-3.0-or-later",
+  "access_right": "open",
+  "keywords": ["decision conflict tasks", "evidence accumulation models", "diffusion decision models", "race models", "hierarchical Bayesian estimation", "EMC2"],
+  "related_identifiers": [
+    {"relation": "isSupplementTo", "identifier": "PAPER_DOI", "scheme": "doi"},
+    {"relation": "isSupplementedBy", "identifier": "DATA_RECORD_DOI", "scheme": "doi"},
+    {"relation": "requires", "identifier": "10.3758/s13428-025-02869-y", "scheme": "doi"}
+  ],
+  "references": [
+    "Eisenberg, I. W., et al. (2019). Uncovering the structure of self-regulation through data-driven ontology discovery. Nature Communications, 10, 2319. https://doi.org/10.1038/s41467-019-10301-1",
+    "Stevenson, N., Donzallaz, M. C., Innes, R. J., Forstmann, B. U., Matzke, D., & Heathcote, A. (2026). Bayesian hierarchical cognitive modeling with the EMC2 package. Behavior Research Methods, 58, 35. https://doi.org/10.3758/s13428-025-02869-y"
+  ],
+  "notes": "Funding: Australia-US Multi-University Research Initiative grant (DSTG AUSMURIV000003, ONR/DoD N00014-23-1-2792) to AH; NWO Vidi grant VI.Vidi.191.091 to DM. Computing: National Computational Infrastructure (NCI), Australia."
+}

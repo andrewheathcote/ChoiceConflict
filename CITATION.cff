@@ -1,0 +1,41 @@
+cff-version: 1.2.0
+message: "If you use this code or the supplement, please cite the paper and this software record."
+title: "ChoiceConflict: code and supplement for 'Racing to Controlling Decision Conflict'"
+version: 1.0.0
+license: GPL-3.0-or-later
+repository-code: "https://github.com/OWNER/ChoiceConflict"
+authors:
+  - family-names: Heathcote
+    given-names: Andrew
+    orcid: "https://orcid.org/0000-0003-4324-5537"
+    affiliation: "University of Newcastle, Australia; University of Amsterdam"
+  - family-names: Metz
+    given-names: Marit
+    orcid: "https://orcid.org/0009-0003-9648-7457"
+    affiliation: "University of Amsterdam"
+  - family-names: Stevenson
+    given-names: Niek
+    orcid: "https://orcid.org/0000-0003-3206-7544"
+    affiliation: "University of Amsterdam"
+  - family-names: Matzke
+    given-names: Dora
+    orcid: "https://orcid.org/0000-0003-1990-0175"
+    affiliation: "University of Amsterdam"
+keywords:
+  - decision conflict tasks
+  - evidence accumulation models
+  - diffusion decision models
+  - race models
+  - hierarchical Bayesian estimation
+preferred-citation:
+  type: article
+  title: "Racing to Controlling Decision Conflict"
+  authors:
+    - family-names: Heathcote
+      given-names: Andrew
+    - family-names: Metz
+      given-names: Marit
+    - family-names: Stevenson
+      given-names: Niek
+    - family-names: Matzke
+      given-names: Dora

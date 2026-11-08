@@ -1,0 +1,3 @@
+"criterion","one_mech_recovered","one_mech_sets","two_mech_recovered","two_mech_sets","worst_wrong_winner_gap"
+"best-draw plug-in (used)",32,35,21,35,53
+"standard (posterior-mean plug-in)",12,35,19,35,8961
