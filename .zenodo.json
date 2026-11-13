@@ -3,18 +3,48 @@
   "upload_type": "software",
   "description": "<p>Code, supplementary materials and figures for Heathcote, Metz, Stevenson and Matzke, 'Racing to Control Decision Conflict'. Five evidence-accumulation models (LBA, RDM, LNR, WDM, DDM) of simple choice and of the Simon, Stroop and attention-network tasks (data: Eisenberg et al., 2019), fitted hierarchically with EMC2/DMC2. The release holds one entry point per stage (data, classification, model selection, floors, predictives, figures, model recovery), a local fitting driver, and the supplement (Word, with its Markdown and LaTeX source). The fits, data, predictives, plot-ready tables and the source tarballs of the eleven EMC2/DMC2 builds that made the fits are in the companion data record.</p>",
   "creators": [
-    {"name": "Heathcote, Andrew", "affiliation": "University of Newcastle, Australia; University of Amsterdam", "orcid": "0000-0003-4324-5537"},
-    {"name": "Metz, Marit", "affiliation": "University of Amsterdam", "orcid": "0009-0003-9648-7457"},
-    {"name": "Stevenson, Niek", "affiliation": "University of Amsterdam", "orcid": "0000-0003-3206-7544"},
-    {"name": "Matzke, Dora", "affiliation": "University of Amsterdam", "orcid": "0000-0003-1990-0175"}
+    {
+      "name": "Heathcote, Andrew",
+      "affiliation": "University of Newcastle, Australia; University of Amsterdam",
+      "orcid": "0000-0003-4324-5537"
+    },
+    {
+      "name": "Metz, Marit",
+      "affiliation": "University of Amsterdam",
+      "orcid": "0009-0003-9648-7457"
+    },
+    {
+      "name": "Stevenson, Niek",
+      "affiliation": "University of Amsterdam",
+      "orcid": "0000-0003-3206-7544"
+    },
+    {
+      "name": "Matzke, Dora",
+      "affiliation": "University of Amsterdam",
+      "orcid": "0000-0003-1990-0175"
+    }
   ],
-  "license": "GPL-3.0-or-later",
+  "license": "gpl-3.0-or-later",
   "access_right": "open",
-  "keywords": ["decision conflict tasks", "evidence accumulation models", "diffusion decision models", "race models", "hierarchical Bayesian estimation", "EMC2"],
+  "keywords": [
+    "decision conflict tasks",
+    "evidence accumulation models",
+    "diffusion decision models",
+    "race models",
+    "hierarchical Bayesian estimation",
+    "EMC2"
+  ],
   "related_identifiers": [
-    {"relation": "isSupplementTo", "identifier": "PAPER_DOI", "scheme": "doi"},
-    {"relation": "isSupplementedBy", "identifier": "10.5281/zenodo.24195629", "scheme": "doi"},
-    {"relation": "requires", "identifier": "10.3758/s13428-025-02869-y", "scheme": "doi"}
+    {
+      "relation": "isSupplementedBy",
+      "identifier": "10.5281/zenodo.24195629",
+      "scheme": "doi"
+    },
+    {
+      "relation": "requires",
+      "identifier": "10.3758/s13428-025-02869-y",
+      "scheme": "doi"
+    }
   ],
   "references": [
     "Eisenberg, I. W., et al. (2019). Uncovering the structure of self-regulation through data-driven ontology discovery. Nature Communications, 10, 2319. https://doi.org/10.1038/s41467-019-10301-1",
