@@ -4,6 +4,10 @@ title: "ChoiceConflict: code and supplement for 'Racing to Control Decision Conf
 version: 1.0.0
 license: GPL-3.0-or-later
 repository-code: "https://github.com/andrewheathcote/ChoiceConflict"
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.24195629
+    description: "Zenodo data record: data, the fits behind the figures, predictives, plot-ready tables and EMC2/DMC2 builds"
 authors:
   - family-names: Heathcote
     given-names: Andrew

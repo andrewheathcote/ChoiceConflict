@@ -15,7 +15,7 @@ This archive accompanies the paper's evidence-accumulation models (LBA, RDM, LNR
 | record | holds |
 |---|---|
 | GitHub repository, https://github.com/andrewheathcote/ChoiceConflict, and its Zenodo software record (DOI: SOFTWARE_RECORD_DOI) | `code/`, `doc/`, `figures/`, `recovery/`, `builds/BUILDS.csv`, `MD5SUMS` and `install_builds.sh` |
-| Zenodo data record (DOI: DATA_RECORD_DOI) | `inputs/`, the 41 fits behind the delta, CAF and defective-CDF figures (`derived/tables/figure_fits.csv`), their `derived/pp_raw/`, the mechanism knockouts (`derived/pp_null/`), `derived/tables/` and `derived/records/`, and the eleven EMC2/DMC2 source tarballs `builds/EMC2_<sha>.tar.gz` (`builds.tar`), as tar bundles |
+| Zenodo data record, https://doi.org/10.5281/zenodo.24195629 | `inputs/`, the 41 fits behind the delta, CAF and defective-CDF figures (`derived/tables/figure_fits.csv`), their `derived/pp_raw/`, the mechanism knockouts (`derived/pp_null/`), `derived/tables/` and `derived/records/`, and the eleven EMC2/DMC2 source tarballs `builds/EMC2_<sha>.tar.gz` (`builds.tar`), as tar bundles |
 
 The all-model figures (DIC, misfit and convergence grids) are drawn from the plot-ready tables, so their fits are not needed to reproduce them. The other 392 fits (~126 GB) are available from the authors on request.
 

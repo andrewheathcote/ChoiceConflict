@@ -13,7 +13,7 @@
   "keywords": ["decision conflict tasks", "evidence accumulation models", "diffusion decision models", "race models", "hierarchical Bayesian estimation", "EMC2"],
   "related_identifiers": [
     {"relation": "isSupplementTo", "identifier": "PAPER_DOI", "scheme": "doi"},
-    {"relation": "isSupplementedBy", "identifier": "DATA_RECORD_DOI", "scheme": "doi"},
+    {"relation": "isSupplementedBy", "identifier": "10.5281/zenodo.24195629", "scheme": "doi"},
     {"relation": "requires", "identifier": "10.3758/s13428-025-02869-y", "scheme": "doi"}
   ],
   "references": [
