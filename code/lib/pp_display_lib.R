@@ -1,5 +1,5 @@
 ## Shared code for the goodness-of-fit figures on the display fits (plot_best5_display.R,
-## plot_models6_display.R, plot_split6_display.R). Reads the posterior-predictive primitives in
+## plot_models6_display.R). Reads the posterior-predictive primitives in
 ## derived/pp_subj/<label>.rds (06_predict/pp_subj.R: 100 draws x 518 subjects).
 ## The group curve is an aggregate over subjects of each subject's five correct-RT quantiles
 ## (10-90%) by congruency and five-bin accuracy. AGG chooses the aggregate for the RT quantiles:

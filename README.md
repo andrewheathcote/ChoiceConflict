@@ -84,10 +84,10 @@ What was checked when the archive was built (2026-11-07):
   - all five analysed data files (Choice, Simon, Stroop, Stroop accuracy-coded, ANT) from the raw files (`code/00_data/make_data.R`; identical). This needed one fix to the cleaning script: its Stroop section reused the Simon section's excluded participants (s218, s375, s550). The analysed Stroop data, which every Stroop fit used, never excluded them, and the fixed script reproduces that data exactly.
 - **DIC.** Recomputed from the archived fits, each on its own build (`compare(..., use_best_fit = TRUE)`), for the smallest fit of every conflict build and all 16 simple-choice fits: all 25 match the tables to within 0.001.
 - **Figures.** Re-rendered from this archive (2026-11-08) and compared with the previous figures:
-  - unchanged: choice, choice recovery, convergence grids, split6, models6 ANT and Stroop, best5 Stroop;
+  - unchanged: choice, choice recovery, convergence grids, models6 ANT and Stroop, best5 Stroop;
   - changed by the subject-level predictives, which replaced the earlier population-level ones: the delta and CAF grids, and three best5 picks (ANT CAF row WDM VcSc → BiVc; Simon WDM BiSc → Bi in the delta row and → BiVc in the CAF row);
   - changed by the restricted Simon LNR refits (S3): grid_dic_Simon and models6_Simon (the LNR MciSci panel); grid_dic_ANT and grid_dic_Stroop move slightly through the shared colour scale.
-- **Online record alone** (rechecked 2026-11-13). The data record's bundles (`local_only/tools/stage_online.sh`), unpacked into an empty folder with only `code/` and `recovery/` added, render all 27 figures of the paper and the supplement pixel-identical (0 differing pixels) to those in `figures/`.
+- **Online record alone** (rechecked 2026-11-13). The data record's bundles (`local_only/tools/stage_online.sh`), unpacked into an empty folder with only `code/` and `recovery/` added, render all 22 figures of the paper and the supplement pixel-identical (0 differing pixels) to those in `figures/`.
 - **Recovery tables.** The legacy-sampler comparison columns were removed.
 
 ## Licences

@@ -5,7 +5,6 @@
 "NCI/newsampler/figs/emc2_plot_lib.R","348ec4530337151a1808c0c7194115fa","code/lib/emc2_plot_lib.R","ported"
 "NCI/newsampler/figs/plot_best5_emc2.R","5204c3c320fc79bd502d89f3fa0e9701","code/07_figures/plot_best5.R","ported"
 "NCI/newsampler/figs/plot_models6_emc2.R","7a8366e26281f2a0ea80df37cc79d6a4","code/07_figures/plot_models6.R","ported"
-"NCI/newsampler/figs/plot_split6_emc2.R","0149c3c6ee6849c3e803b0f4dcb5bcb8","code/07_figures/plot_split6.R","ported"
 "NCI/newsampler/figs/plot_choice_jm.R","b7d326e3c834334372692b9479ab4dfe","code/07_figures/plot_choice.R","ported"
 "NCI/newsampler/gadi/choice_rec/score_recch_ic.R","9b4868ea7f7c1036ea8287e244fcc64a","local_only/historical/choice_loo/score_recch_ic.R","ported; retired 2026-11-10 (WAIC/LOO dropped; score.R scores DIC and BPIC)"
 "NCI/newsampler/rec5/recovery_rec5.R","80a62864057b35b5ee08d2a59b154db4","code/08_recovery/conflict/score_rec5.R","ported"

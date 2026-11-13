@@ -2,7 +2,7 @@
 ## tasks in the order Simon, Stroop, ANT within each block, columns WDM DDM RDM LBA LNR. Models, panels, labels and
 ## y limits as plot_best5.R (same pick rule, FIXED / FIXED_TASK, delta 0 to .15, CAF 70-100); only the layout differs.
 ## Transposed (t, Andrew, 2026-11-12): 5 x 6, rows the model types, columns delta for Simon, Stroop, ANT then CAF for
-## the same tasks, task names above the columns; delta y axis on the left, CAF y axis on the right (as split6_grid).
+## the same tasks, task names above the columns; delta y axis on the left, CAF y axis on the right.
 ## Model labels in Palatino, whose i cannot pass for an l (fonts embedded with Ghostscript).
 ##   Rscript code/07_figures/plot_best5_grid.R [t]   -> figures/best5_grid.pdf, or best5_grid_5x6.pdf with t
 CODE <- local({ d <- dirname(normalizePath(sub("--file=", "", grep("--file=", commandArgs(FALSE), value = TRUE)))); while (!file.exists(file.path(d, "config.R"))) d <- dirname(d); d })

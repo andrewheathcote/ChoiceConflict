@@ -33,9 +33,7 @@ switch(stage,
                run("07_figures/plot_best5_grid.R", "t")                                           # paper 10
                run("07_figures/plot_models6_mix.R", "Stroop", "ANT", "RDM")                       # paper 11
                run("07_figures/plot_mech_null_grid.R")                                            # paper 12
-               run("07_figures/plot_split6_grid.R")                                               # paper 13
-               for (m in c("RDM_BiSi", "RDM_VciSci", "RDM_BciSci", "LNR_MciSci")) run("07_figures/plot_split6.R", 100, m)   # S6
-               run("07_figures/plot_effects.R")                                                   # paper 14
-               run("07_figures/plot_choice.R", "plot"); run("07_figures/plot_choice_types.R")     # paper 4, S7; S8
-               run("08_recovery/conflict/recovery_figs.R"); run("08_recovery/choice/score.R") },  # S9, S10; S11
+               run("07_figures/plot_effects.R")                                                   # paper 13
+               run("07_figures/plot_choice.R", "plot"); run("07_figures/plot_choice_types.R")     # paper 4, S6; S7
+               run("08_recovery/conflict/recovery_figs.R"); run("08_recovery/choice/score.R") },  # S8, S9; S10
   stop("unknown stage ", stage, ": data, classify, select, floors, predict, figures"))

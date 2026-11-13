@@ -38,7 +38,6 @@ The figures are redrawn from the archive (`code/run_stage.R figures`). They are 
 
 ![](fig/models6_ANT.png){width=100%}
 
-![**Figure S7.** RDM ViSi for the 100 participants with the steepest and the 100 with the shallowest observed delta (left) and CAF (right) slopes, each group drawn from its own participants' predictives.](fig/split6_RDM_ViSi_X100.png){width=100%}
 
 ![**Figure S8.** Simple choice: DIC of the 16 variants; defective CDFs of the five full variants; delta and CAF by stimulus for the DIC-best variant (DDM).](fig/choice.png){width=100%}
 
