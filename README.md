@@ -1,5 +1,7 @@
 # ChoiceConflict: reproducibility archive
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24200683.svg)](https://doi.org/10.5281/zenodo.24200683)
+
 Heathcote, A., Metz, M., Stevenson, N., & Matzke, D. *Racing to Control Decision Conflict.*
 
 This archive accompanies the paper's evidence-accumulation models (LBA, RDM, LNR, WDM, DDM) of simple choice and of the Simon, Stroop and attention-network (ANT) conflict tasks (data: Eisenberg et al., 2019). It holds:
@@ -14,7 +16,7 @@ This archive accompanies the paper's evidence-accumulation models (LBA, RDM, LNR
 
 | record | holds |
 |---|---|
-| GitHub repository, https://github.com/andrewheathcote/ChoiceConflict, and its Zenodo software record (DOI: SOFTWARE_RECORD_DOI) | `code/`, `doc/`, `figures/`, `recovery/`, `builds/BUILDS.csv`, `MD5SUMS` and `install_builds.sh` |
+| GitHub repository, https://github.com/andrewheathcote/ChoiceConflict, and its Zenodo software record, https://doi.org/10.5281/zenodo.24200683 (all versions) | `code/`, `doc/`, `figures/`, `recovery/`, `builds/BUILDS.csv`, `MD5SUMS` and `install_builds.sh` |
 | Zenodo data record, https://doi.org/10.5281/zenodo.24195629 | `inputs/`, the 41 fits behind the delta, CAF and defective-CDF figures (`derived/tables/figure_fits.csv`), their `derived/pp_raw/`, the mechanism knockouts (`derived/pp_null/`), `derived/tables/` and `derived/records/`, and the eleven EMC2/DMC2 source tarballs `builds/EMC2_<sha>.tar.gz` (`builds.tar`), as tar bundles |
 
 The all-model figures (DIC, misfit and convergence grids) are drawn from the plot-ready tables, so their fits are not needed to reproduce them. The other 392 fits (~126 GB) are available from the authors on request.

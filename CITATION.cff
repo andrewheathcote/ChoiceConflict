@@ -6,6 +6,9 @@ license: GPL-3.0-or-later
 repository-code: "https://github.com/andrewheathcote/ChoiceConflict"
 identifiers:
   - type: doi
+    value: 10.5281/zenodo.24200683
+    description: "Zenodo software record (all versions)"
+  - type: doi
     value: 10.5281/zenodo.24195629
     description: "Zenodo data record: data, the fits behind the figures, predictives, plot-ready tables and EMC2/DMC2 builds"
 authors:
