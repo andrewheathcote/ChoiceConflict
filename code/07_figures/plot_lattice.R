@@ -6,9 +6,9 @@
 ## grid pairs them (a,z) against (v,s).
 ##
 ## DISPLAY VERSION (2026-10-20): copy of plot_lattice_jm.R. Outcome per cell from
-## derived/tables/display_jm.csv (03_classify): converged; ridge-only
+## derived/tables/display_jm.csv (03_classify): converged; partially converged
 ## shown as converged (same blue, hatched); failed (not displayed as converged:
-## not converged, ridge-only Rhat >= 1.5, subject-mode caveat); fit running
+## not converged, partially converged Rhat >= 1.5, subject-mode caveat); fit running
 ## (campaign DDMs in play); not fit. mech from derived/tables/mech_key.csv by spec;
 ## never from file names.
 CODE <- local({ d <- dirname(normalizePath(sub("--file=", "", grep("--file=", commandArgs(FALSE), value = TRUE)))); while (!file.exists(file.path(d, "config.R"))) d <- dirname(d); d })
@@ -39,7 +39,7 @@ a$variant <- sub("^[^_]+_", "", a$spec)
 a$mech <- MK$mech[match(a$spec, MK$spec)]
 stopifnot(!anyNA(a$mech), all(nzchar(a$mech)))
 a$st <- ifelse(a$in_play, "run", ifelse(!a$display_converged, "fail",
-               ifelse(a$class == "ridge-only, shown as converged", "ridge", "conv")))
+               ifelse(a$class == "partially converged", "ridge", "conv")))
 a <- a[!(a$arch %in% c("WDM","DDM") & grepl("V", a$mech)), ]   # drop sv cases
 RUNNING <- any(a$st == "run")
 a <- a[!(a$arch %in% c("RDM","LBA") & nchar(a$mech) > 4), ]    # k<=4 everywhere
@@ -75,7 +75,7 @@ legend_panel <- function() {
   ks <- if (RUNNING) 1:5 else c(1:3, 5); ly <- c(.68, .53, .38, .23, .08)[seq_along(ks)]; names(ly) <- ks
   for (k in ks) {
     rect(.08, ly[[as.character(k)]]-.055, .26, ly[[as.character(k)]]+.055, col = COL[k], border = "white", lwd = 1.2)
-    text(.32, ly[[as.character(k)]], c("converged","ridge-only (DIC \u00b1250)","failed","fit running","not fit")[k],
+    text(.32, ly[[as.character(k)]], c("converged","partially converged\n(DIC \u00b175)","failed","fit running","not fit")[k],
          adj = 0, cex = 1.55)
   }
   ridgehatch(.08, ly[["2"]]-.055, .26, ly[["2"]]+.055)

@@ -47,7 +47,7 @@ curves <- function(dest) { z <- read_summ(dest); curves_from(grp_pp(z$pp), grp_o
 blank <- function(msg) { plot(NA, xlim = 0:1, ylim = 0:1, axes = FALSE, xlab = "", ylab = "")
   box(col = "grey85"); text(.5, .55, msg, col = "grey45", cex = .95) }
 ## class tag for a panel label
-tag <- function(cl) switch(cl, "converged" = "", "ridge-only, shown as converged" = " (ridge-only)",
+tag <- function(cl) switch(cl, "converged" = "", "partially converged" = " (partially converged)",
                            " (not converged)")
 draw_delta <- function(cv, xl, yl, label, legend = FALSE) {
   plot(NA, xlim = xl, ylim = yl, xlab = "", ylab = "", las = 1)

@@ -1,16 +1,16 @@
 ## The paper figures' convergence classes (Andrew, 2026-10-20). A model is DISPLAYED AS CONVERGED when a current
 ## joint-move-family fit (jm, its Gadi continuations, the jm1 seeds, the AWS campaign jmh fits) either
 ##   - met the stop rule (max(mu Rhat, alpha .99 quantile) < 1.1), or
-##   - is ridge-only (rhat_ident <= 1.1, LL drift <= 0.2) with the rule's Rhat < 1.5, not split within the run
+##   - is partially converged (called ridge-only before 2026-11-10: rhat_ident <= 1.1, LL drift <= 0.2) with the rule's Rhat < 1.5, not split within the run
 ##     (subject spread <= 15, chain LL gap <= 100) and without a subject-mode deficit (jm screen flag, or > 10 LL below the
 ##     best run of its case).
 ## Converged fits with a subject-mode caveat (split, or stuck in a subject's worse mode) are NOT displayed as converged
-## (Andrew, 2026-10-20); neither are ridge-only fits at Rhat >= 1.5.
+## (Andrew, 2026-10-20); neither are partially converged fits at Rhat >= 1.5.
 ## Writes derived/tables/display_jm_base.csv (03_classify/apply_q6.R then adds the Q6 refits): one row per model, its class, the run whose DIC the figures should use, and that DIC
 ## (jm1 seeds: from jm1_dic.csv; NA where a run's DIC has not been computed).
 ##   Rscript code/03_classify/display_index.R
 ## Inputs are the frozen outputs of the earlier steps (derived/tables/frozen/): conv_by_spec.csv (conv_by_sampler.R, dic_trust.R),
-## inventory_classes.csv (replay/inventory_classes.R: graded runs, LL drift, ridge class), index_jm.csv (the jm index),
+## inventory_classes.csv (replay/inventory_classes.R: graded runs, LL drift, ridge class = partially converged here), index_jm.csv (the jm index),
 ## screen_flags.csv and retry_eval.csv (the subject-mode screen), campaign_summary_dic.csv (the DIC of each campaign, Niek
 ## and local fit summary), jm1_dic.csv, handstopped_runs.csv, ll_screen_subjects.csv (RDM likelihood-defect screen).
 CODE <- local({ d <- dirname(normalizePath(sub("--file=", "", grep("--file=", commandArgs(FALSE), value = TRUE)))); while (!file.exists(file.path(d, "config.R"))) d <- dirname(d); d })
@@ -50,7 +50,7 @@ h <- R$source %in% c("jmh", "jmh (w3, record)", "niek", "local"); R$DIC[h] <- H$
 ## jm1 seeds: DICs computed from their fits on S3 (jm1_dic.csv, 2026-10-20) for the runs the display uses
 J1 <- fz("jm1_dic.csv"); j1 <- R$source == "jm1"; R$DIC[j1] <- J1$DIC[match(R$label[j1], J1$label)]
 ## class of each run, best first; a model takes its best run's class (ties: a run with a known DIC, then the lower rule Rhat)
-lev <- c("converged", "converged, subject-mode caveat", "ridge-only, shown as converged", "ridge-only, Rhat >= 1.5", "not converged")
+lev <- c("converged", "converged, subject-mode caveat", "partially converged", "partially converged, Rhat >= 1.5", "not converged")
 R$class <- ifelse(R$met & R$clean, lev[1], ifelse(R$met, lev[2], ifelse(R$ridge & R$clean & R$rule < 1.5, lev[3],
            ifelse(R$ridge & R$clean, lev[4], lev[5]))))
 ## runs stopped by hand with no end record (handstopped_runs.csv: ANT_DDM_BciVcSc jmh1c6, DIC computed from its fit):
@@ -71,6 +71,6 @@ D$caveat[ld] <- paste("likelihood defect (pre-26-Oct RDM C++ likelihood):", vapp
 D <- D[order(D$task, D$arch, D$spec), ]
 out <- tab_path("display_jm_base.csv"); write_out(D, out)
 cat("wrote", normalizePath(out), "\n"); options(width = 200)
-print(table(paste(D$task, D$arch), factor(D$class, c(lev, "in play (campaign fit queued or running)", "not fitted yet"), labels = c("conv", "conv*", "ridge<1.5", "ridge>=1.5", "not", "in play", "not fitted"))))
+print(table(paste(D$task, D$arch), factor(D$class, c(lev, "in play (campaign fit queued or running)", "not fitted yet"), labels = c("conv", "conv*", "partial<1.5", "partial>=1.5", "not", "in play", "not fitted"))))
 cat("\ndisplayed as converged:", sum(D$display_converged), "of", nrow(D), "; DIC missing for displayed models:", sum(D$display_converged & is.na(D$DIC)), ":",
     paste(D$spec[D$display_converged & is.na(D$DIC)], "(", D$label[D$display_converged & is.na(D$DIC)], ")", collapse = ", "), "\n")

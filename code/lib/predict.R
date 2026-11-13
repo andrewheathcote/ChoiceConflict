@@ -84,11 +84,14 @@ pp_stats_subj <- function(f, dat, n_post = 100, seed = 42) {
 }
 
 ## the same draws as pp_stats_subj() (same seed, same calls in the same order), kept as trials: stacked make_data()
-## frames with a postn column, as EMC2's plot_delta / plot_caf take them
-sim_raw <- function(f, dat, n_post = 100, seed = 42) {
+## frames with a postn column, as EMC2's plot_delta / plot_caf take them. `fix` (named sampled values, e.g.
+## c(v_iMd = -Inf)) overrides those parameters in every subject and draw, for predictives with a mechanism removed
+## (06_predict/pp_null.R); same seed and draws, so only the fixed parameters differ from the fit's own predictives.
+sim_raw <- function(f, dat, n_post = 100, seed = 42, fix = NULL) {
   set.seed(seed)
   des <- fit_design(f, dat); subs <- levels(factor(dat$subjects))
   al <- subject_draws(f, subs); gc(verbose = FALSE)
+  stopifnot(all(names(fix) %in% dimnames(al)[[1]])); for (p in names(fix)) al[p, , ] <- fix[[p]]
   idx <- round(seq(1, dim(al)[3], length.out = n_post)); out <- vector("list", n_post)
   for (k in seq_along(idx)) {
     sim <- try(make_data(t(al[, , idx[k]]), design = des, data = dat, shrink2bound = TRUE), silent = TRUE)

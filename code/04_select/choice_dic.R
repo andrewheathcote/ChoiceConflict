@@ -1,11 +1,11 @@
-## Conditional best-draw DIC for the 16 simple-choice fits (label jmd1), on their own build (4f1fa123). Read-only.
+## Conditional best-draw DIC for the 16 simple-choice fits (CHOICE in config.R), on their own build (4f1fa123). Read-only.
 ##   Rscript code/04_select/choice_dic.R      -> derived/tables/choice_dic.csv (then choice_tables.R -> choice_jm.csv)
 ## compare(..., BayesFactor = FALSE, WAIC = FALSE, type = "conditional", use_best_fit = TRUE) per fit, as for every fit in
 ## the project; Dmean is the deviance at the posterior mean (the figure's "D"). From newsampler/gadi/choice/choice_dic.R.
 CODE <- local({ d <- dirname(normalizePath(sub("--file=", "", grep("--file=", commandArgs(FALSE), value = TRUE)))); while (!file.exists(file.path(d, "config.R"))) d <- dirname(d); d })
 source(file.path(CODE, "config.R"))
 SHA <- use_build(BUILD[["choice"]])
-FT <- read_tab("FITS.csv"); FT <- FT[FT$task == "Choice", ]
+FT <- read_tab("FITS.csv"); FT <- FT[match(CHOICE, FT$label), ]; stopifnot(!anyNA(FT$label))
 rows <- lapply(seq_len(nrow(FT)), function(i) {
   e <- load_fit(FT$label[i])
   ic <- compare(list(m = e), BayesFactor = FALSE, WAIC = FALSE, type = "conditional", use_best_fit = TRUE, print_summary = FALSE)

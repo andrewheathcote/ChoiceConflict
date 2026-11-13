@@ -10,8 +10,8 @@
 ## Convergence and DIC come from derived/tables/display_jm.csv (03_classify). Delta and CAF misfit come from
 ## derived/tables/adequacy_display[_median].csv (06_predict/build_adequacy.R: each displayed fit's SUBJECT-LEVEL
 ## posterior predictive).
-## Cell states: converged; ridge-only shown as converged (same fill, hatched);
-## did not converge (grey: not converged, ridge-only Rhat >= 1.5, and the
+## Cell states: converged; partially converged (stop rule not met, Rhat_ident <= 1.1, rule Rhat < 1.5) (same fill, hatched);
+## did not converge (grey: not converged, partially converged with Rhat >= 1.5, and the
 ## subject-mode-caveat models); fit running (campaign DDMs in play, dotted).
 ## mech comes from derived/tables/mech_key.csv by spec.
 CODE <- local({ d <- dirname(normalizePath(sub("--file=", "", grep("--file=", commandArgs(FALSE), value = TRUE)))); while (!file.exists(file.path(d, "config.R"))) d <- dirname(d); d })
@@ -27,10 +27,11 @@ stopifnot(MEASURE %in% c("delta","caf","dic"))
 if (MEASURE == "jdic") stop("joint DIC has been dropped from this project")
 AGG <- Sys.getenv("PP_AGG", unset = "mean"); stopifnot(AGG %in% c("mean", "median"))
 aggsuf <- if (AGG == "mean" || MEASURE == "dic") "" else "_median"
-## May a ridge-only model take the best box, the best-2 circle, the zero point and
-## the model-type header value? FALSE (Andrew, 2026-10-20, after first trying TRUE): all
-## of those go to models that met the stop rule; ridge-only cells keep their colour and hatching.
-RIDGE_CAN_BE_BEST <- FALSE
+## May a partially converged model take the best box, the best-2 circle, the zero point and
+## the model-type header value? TRUE (Andrew, 2026-11-10; FALSE from 2026-10-20): their DIC is good to
+## about +-75 (03_classify/dic_tolerance.R), and on ANT the two best DDMs are partially converged, 1,221 and 582 better than the best
+## DDM that met the stop rule. They keep their hatching.
+RIDGE_CAN_BE_BEST <- TRUE
 TASKS <- strsplit(Sys.getenv("HEAT_TASKS", unset = "Simon,Stroop,ANT"), ",")[[1]]   # HEAT_TASKS=Simon for a one-page draft
 OUTDIR <- Sys.getenv("HEAT_OUT", unset = FIGDIR)
 dir.create(OUTDIR, recursive = TRUE, showWarnings = FALSE)
@@ -61,7 +62,7 @@ local({
   DISP$variant <- sub("^[^_]+_", "", DISP$spec)
   DISP$mech <- MK$mech[match(DISP$spec, MK$spec)]
   stopifnot(!anyNA(DISP$mech), all(nzchar(DISP$mech)))
-  DISP$ridge <- DISP$class == "ridge-only, shown as converged"
+  DISP$ridge <- DISP$class == "partially converged"
   DISP$kk <- paste(DISP$task, DISP$arch, skey(DISP$mech))
   stopifnot(!anyDuplicated(DISP$kk))
   AD <- read_tab(sprintf("adequacy_display%s.csv", aggsuf))
@@ -70,7 +71,7 @@ local({
   DISP <<- DISP })
 vals_for <- function(tk) {
   if (MEASURE %in% c("delta","caf")) {
-    ## displayed-converged models only, ridge-only included (they are never marked best when
+    ## displayed-converged models only, partially converged included (they are never marked best when
     ## RIDGE_CAN_BE_BEST is FALSE: nobest() below); misfit has no zero point to protect
     D <- DISP
     D$v <- if (MEASURE == "delta") D$rel else D$caf
@@ -90,7 +91,7 @@ vals_for <- function(tk) {
     A <- aggregate(val ~ kk, D, min); setNames(A$val, A$kk)
   }
 }
-## ridge-only DIC (good to about +-250) is added after the reference is set, so
+## partially converged DIC (good to about +-75: 03_classify/dic_tolerance.R) is added after the reference is set, so
 ## with RIDGE_CAN_BE_BEST = FALSE it is coloured but never the zero point
 ridge_vals <- function(tk, ref) {
   D <- DISP[DISP$ridge & DISP$task == tk & !is.na(DISP$DIC), ]
@@ -122,7 +123,7 @@ allv   <- unlist(VL, use.names = FALSE)
 LO <- min(allv); HI <- max(allv)
 tf <- function(v) log10(pmax(v, LO) + LOGOFF)
 ## Outcomes per cell:
-##   a value      displayed as converged (hatched: ridge-only)
+##   a value      displayed as converged (hatched: partially converged)
 ##   grey fill    fitted, not displayed as converged
 ##   dashed box   campaign fit still running
 ##   dotted box   no joint-move fit (Simon DDM_BciVcSc, never refit)
@@ -199,10 +200,10 @@ cell <- function(xc, y, w, v, st = "ok", best = FALSE) {
   } else if (st == "nc") {                     # fitted, did not converge
     rect(x1, y1, x2, y2, col = "grey82", border = "grey62", lwd = 0.4)
   } else { rect(x1, y1, x2, y2, col = col_of(v), border = NA)
-    if (st == "rg") ridgehatch(x1, y1, x2, y2) }   # ridge-only, shown as converged
+    if (st == "rg") ridgehatch(x1, y1, x2, y2) }   # partially converged
   STATES <<- union(STATES, st)
 }
-## ridge-only: slanted lines over the colour (was a white dot; the cell centre now carries the "=" mark, 3 Nov)
+## partially converged: slanted lines over the colour (was a white dot; the cell centre now carries the "=" mark, 3 Nov)
 ridgehatch <- function(x1, y1, x2, y2) rect(x1, y1, x2, y2, density = 22, angle = 45, col = "grey15", lwd = 0.5, border = NA)
 STATES <- character(0)
 ## the best cell is boxed together with its label, which makes it far easier to
@@ -242,7 +243,7 @@ ADD_THR <- 50; DROP_THR <- 150
 ## Recovery study 5 rejects these one-mechanism models although they are within ADD_THR of the best: in their cells,
 ## one-mechanism data always put the one-mechanism model clearly ahead (rec5/recovery_rec5_cells.csv). Keys "task arch mech".
 REC5_OUT <- c("Simon RDM b", "Simon LBA b")
-## "=" as two white bars with a thin dark outline, legible on every fill (Andrew, 3 Nov); on a hatched (ridge-only)
+## "=" as two white bars with a thin dark outline, legible on every fill (Andrew, 3 Nov); on a hatched (partially converged)
 ## cell a patch of the fill clears the lines behind it. cex is unused (kept for the call sites).
 ## sx, sy scale the bars (legend: larger, so the thin outline does not swallow a bar at screen zoom; Andrew, 4 Nov)
 ## Cells too (Andrew, 4 Nov: at 1x the outline filled whole bars black at screen zoom): sx 1.5, sy 1.8 by default.
@@ -430,7 +431,7 @@ text(vx - 0.004, 0.945, "Variant", cex = CX*1.0, font = 2, adj = 0)
 ## exist only on the Stroop page), stacked from the top.
 yy <- 0.880; nxt <- function() { y <- yy; yy <<- yy - 0.050; y }
 lab2 <- function(y, a, b) { text(vx+bw+0.005, y+0.010, a, adj = 0, cex = LC); text(vx+bw+0.005, y-0.010, b, adj = 0, cex = LC) }
-## order (Andrew, 3 Nov): best, not separable, best 2 mechanism, then ridge-only, did not converge, [not applicable, fit running]
+## order (Andrew, 3 Nov): best, not separable, best 2 mechanism, then partially converged, did not converge, [not applicable, fit running]
 y <- nxt(); rect(vx, y-bh, vx+bw, y+bh, col = NA, border = "black", lwd = 3.0); text(vx+bw+0.005, y, "best", adj = 0, cex = LC)
 { y <- nxt(); rect(vx, y-bh*1.15, vx+bw, y+bh*1.15, col = "grey62", border = NA); eqmark(vx+bw/2, y, CX, sx = 1.6, sy = 1.9)
   lab2(y, "not separable", "from best") }
@@ -439,7 +440,7 @@ y <- nxt(); local({ th <- seq(0, 2*pi, length.out = 181)
 lab2(y, "best 2", "mechanism")
 yy <- yy - 0.010                                          # a small gap between the markers and the cell states
 if ("rg" %in% STATES) { y <- nxt(); rect(vx, y-bh, vx+bw, y+bh, col = "grey92", border = NA); ridgehatch(vx, y-bh, vx+bw, y+bh)
-  text(vx+bw+0.005, y, "ridge-only", adj = 0, cex = LC) }
+  text(vx+bw+0.005, y, "partially converged", adj = 0, cex = LC) }
 if ("nc" %in% STATES) { y <- nxt(); rect(vx, y-bh, vx+bw, y+bh, col = "grey82", border = "grey62", lwd = 0.4); lab2(y, "did not", "converge") }
 if ("na" %in% STATES) { y <- nxt(); rect(vx, y-bh, vx+bw, y+bh, col = NA, border = "grey55", lwd = 0.5)
   segments(vx, y-bh, vx+bw, y+bh, col = "grey55", lwd = 0.5); segments(vx, y+bh, vx+bw, y-bh, col = "grey55", lwd = 0.5)

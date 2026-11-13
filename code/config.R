@@ -51,8 +51,17 @@ use_build <- function(sha) {
 ## the builds by role (see builds/BUILDS.csv for which fits each made)
 BUILD <- c(predict = "3c1bcaf1",    # subject-level predictives (pp_subj, pp_raw) for the conflict fits
            choice  = "4f1fa123",    # simple-choice fits, their DIC and predictives
-           ic      = "f2f58985",    # WAIC / PSIS-LOO / pseudo-BMA+ / stacking (choice and its recovery study)
            jm      = "d0b6cf0b")    # the joint-move refits (label jm) and the Q6 restricted Simon LNR refits (jmr)
+
+## the simple-choice fits the paper reports (Figure 4, Table S7.1): 16 variants, all on BUILD["choice"]. The race models'
+## mean rate is free (set jmd1x). The race fits with it fixed (_v1, set jmd1) were the generators and candidates of
+## the first choice recovery study (superseded; its results are in local_only/historical/choice_loo).
+CHOICE <- c(paste0("Choice_", c("LBA", "LBAs", "LBAu", "LBAus", "RDM", "RDMs", "RDMu", "RDMus"), "_jmd1x"),
+            paste0("Choice_", c("LNR", "LNRs", "LNRu", "LNRus"), "_jmd1"),
+            paste0("Choice_", c("WDM_v0", "WDMu_v0", "DDM_v0", "DDMu_v0"), "_jmd1"))
+## the five full variants (response bias and unequal variability), whose predictives Figure 4 draws
+CHOICE_FULL <- c(WDM = "Choice_WDM_v0_jmd1", DDM = "Choice_DDM_v0_jmd1", RDM = "Choice_RDM_jmd1x", LNR = "Choice_LNR_jmd1",
+                 LBA = "Choice_LBA_jmd1x")
 
 ## quiet evaluation of chatty package calls
 quietly <- function(x) { f <- tempfile(); sink(f); on.exit({ sink(); unlink(f) }); force(x) }

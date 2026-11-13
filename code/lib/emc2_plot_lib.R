@@ -21,9 +21,10 @@ emc2_suf <- paste0("_", LEVEL)
 ## figures), best5_Simon_hyper.pdf at hyper level
 emc2_name <- function(stem, rest) sprintf("%s_%s%s.pdf", stem, rest, if (LEVEL == "hyper") "_hyper" else "")
 
-## one panel; returns par("usr")[3:4] so callers can share y limits (the archive scripts' two-pass scheme)
-draw_emc2 <- function(dat, pp, meas, YL = NULL) {
-  acc <- identical(levels(factor(dat$R)), c("FALSE", "TRUE")); yl <- if (is.null(YL)) list() else list(ylim = YL)
+## one panel; returns par("usr")[3:4] so callers can share y limits (the archive scripts' two-pass scheme);
+## ... goes to plot_delta / plot_caf and on to plot() (e.g. yaxt = "n" to draw the y axis elsewhere)
+draw_emc2 <- function(dat, pp, meas, YL = NULL, ...) {
+  acc <- identical(levels(factor(dat$R)), c("FALSE", "TRUE")); yl <- c(if (is.null(YL)) list() else list(ylim = YL), list(...))
   if (meas == "delta")
     do.call(plot_delta, c(list(dat, pp, delta_factor = "CI", main = "", layout = NULL, legendpos = NA,
       functions = list(CI = CIfun, C = mkcfun(acc)), add_percentiles = PCT, xlab = "", ylab = ""), yl))

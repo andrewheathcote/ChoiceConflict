@@ -1,9 +1,9 @@
-## Figure 4 (simple choice) on the jmd1 refits: Paper.R's Choice block, redrawn from the new fits with
+## Figure 4 (simple choice) on the 16 choice fits (CHOICE in config.R): Paper.R's Choice block, redrawn from the new fits with
 ## subject-level posterior predictives (Andrew, 2026-10-23), with EMC2's plot_cdf / plot_delta / plot_caf as in the
 ## archive. Same layout as Paper.R's choice.pdf:
 ##   DIC bars for all 16 variants; defective CDFs for the five full variants (bias + unequal SDs); delta and CAF by
-##   stimulus for the DIC-best full variant (BEST, default DDM; Paper.R drew the LBA, then the best)
-##   Rscript code/07_figures/plot_choice.R sim [cores]    derived/pp_raw/Choice_<spec>_jmd1_subj.rds for the five (skips existing)
+##   stimulus for the DIC-best full variant (BEST, default from choice_dic.csv; Paper.R drew the LBA, then the best)
+##   Rscript code/07_figures/plot_choice.R sim [cores]    derived/pp_raw/<label>_subj.rds for the five (skips existing)
 ##   Rscript code/07_figures/plot_choice.R plot           figures/choice.pdf
 ## Predictives: for 100 evenly spaced posterior draws, every subject is simulated from its own alpha draw on the
 ## design rebuilt from the spec (as pp_subj.R raw, subj level). Simulated on the fits' own build (dev 4f1fa123).
@@ -12,21 +12,21 @@ a <- commandArgs(TRUE); mode <- a[1]
 CODE <- local({ d <- dirname(normalizePath(sub("--file=", "", grep("--file=", commandArgs(FALSE), value = TRUE)))); while (!file.exists(file.path(d, "config.R"))) d <- dirname(d); d })
 source(file.path(CODE, "config.R"))
 OUT <- fig_path("choice.pdf")
-FULL <- c(WDM = "Choice_WDM_v0", DDM = "Choice_DDM_v0", RDM = "Choice_RDM_v1", LNR = "Choice_LNR", LBA = "Choice_LBA_v1")
-BEST <- Sys.getenv("BEST", "DDM")
-raw_file <- function(spec) pp_raw_path(paste0(spec, "_jmd1"))
+FULL <- CHOICE_FULL
+FT <- read_tab("FITS.csv"); spec_of <- function(label) FT$spec[FT$label == label]
+raw_file <- function(label) pp_raw_path(label)
 dat <- load_dat("Choice")
 
 if (mode == "sim") {
   use_build(BUILD[["choice"]]); suppressMessages(library(parallel))
   cores <- if (length(a) > 1) as.integer(a[2]) else 8
   dir.create(file.path(DERIVED, "pp_raw"), showWarnings = FALSE)
-  for (spec in FULL) {
-    if (file.exists(raw_file(spec))) { cat(spec, ": exists\n"); next }
-    t0 <- Sys.time(); sp <- read_spec(spec)
+  for (lb in FULL) {
+    if (file.exists(raw_file(lb))) { cat(lb, ": exists\n"); next }
+    t0 <- Sys.time(); spec <- spec_of(lb); sp <- read_spec(spec)
     des <- design(data = dat, model = get(sp$model), matchfun = sp$matchfun, functions = sp$funs, formula = sp$flist,
                   contrasts = sp$clist, constants = sp$consts, pre_transform = sp$pre, report_p_vector = FALSE)
-    e <- load_fit(paste0(spec, "_jmd1"))
+    e <- load_fit(lb)
     stopifnot(identical(e[[1]]$par_names, sp$stored_par_names))
     al <- get_pars(e, selection = "alpha", stage = "sample", merge_chains = TRUE, by_subject = TRUE, return_mcmc = FALSE)
     subs <- levels(factor(dat$subjects)); stopifnot(setequal(dimnames(al)[[2]], subs)); al <- al[, subs, , drop = FALSE]
@@ -39,8 +39,8 @@ if (mode == "sim") {
       sim$postn <- k; sim }, mc.cores = cores)
     pp <- do.call(rbind, out[!vapply(out, is.null, TRUE)])
     attr(pp, "n_draw") <- length(unique(pp$postn)); attr(pp, "draws_used") <- idx
-    saveRDS(pp, raw_file(spec))
-    cat(sprintf("%s: %d of 100 draws, %d rows, %.1f min\n", spec, attr(pp, "n_draw"), nrow(pp),
+    saveRDS(pp, raw_file(lb))
+    cat(sprintf("%s: %d of 100 draws, %d rows, %.1f min\n", lb, attr(pp, "n_draw"), nrow(pp),
                 as.numeric(difftime(Sys.time(), t0, units = "mins"))))
   }
 }
@@ -50,6 +50,7 @@ if (mode == "plot") {
   source(file.path(CODE, "lib", "plot_compare.R"))            # plot_compare(), from the legacy Functions.R (as Paper.R)
   D <- read_tab("choice_dic.csv")
   ict <- data.frame(DIC = D$DIC, BPIC = D$BPIC, row.names = D$variant)   # two columns: plot_compare subsets rows
+  BEST <- Sys.getenv("BEST", names(FULL)[which.min(D$DIC[match(FULL, D$label)])])
   pp <- lapply(FULL, function(s) readRDS(raw_file(s)))
   pct <- c(10, 50, 90)
   cfun <- \(d)factor(d$S!=d$R,labels=c("Correct","Error"))

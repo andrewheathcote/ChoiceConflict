@@ -1,0 +1,13 @@
+"criterion","group","sets","recovered","largest_wrong_winner_gap"
+"DIC","study 1",20,10,149.4
+"BPIC","study 1",20,5,504.8
+"DIC","study 2",20,6,81.6
+"BPIC","study 2",20,5,334.6
+"DIC","study 3",20,7,86.8
+"BPIC","study 3",20,5,353.8
+"DIC","study 4",10,10,0
+"BPIC","study 4",10,10,0
+"DIC","study 5, G1 data",35,32,27.8
+"BPIC","study 5, G1 data",35,32,58
+"DIC","study 5, G2 data",35,21,52.8
+"BPIC","study 5, G2 data",35,5,387.7

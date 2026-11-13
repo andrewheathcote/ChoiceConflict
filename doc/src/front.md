@@ -1,6 +1,6 @@
 ---
 title: "Supplementary Materials: model fitting, model selection and graphics"
-subtitle: "Racing to Controlling Decision Conflict"
+subtitle: "Racing to Control Decision Conflict"
 author: "Andrew Heathcote, Marit Metz, Niek Stevenson & Dora Matzke"
 ---
 

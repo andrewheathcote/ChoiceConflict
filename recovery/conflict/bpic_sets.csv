@@ -1,0 +1,281 @@
+"criterion","group","set","generator","winner","recovered","gap"
+"DIC","study 1","LNR_g1_r1","LNR_MiSi","LNR_MiSi",TRUE,0
+"DIC","study 1","LNR_g1_r2","LNR_MiSi","LNR_MiSi",TRUE,0
+"DIC","study 1","LNR_g1_r3","LNR_MiSi","LNR_MiSi",TRUE,0
+"DIC","study 1","LNR_g1_r4","LNR_MiSi","LNR_MiSi",TRUE,0
+"DIC","study 1","LNR_g1_r5","LNR_MiSi","LNR_MiSi",TRUE,0
+"DIC","study 1","LNR_g2_r1","LNR_MiSci","LNR_MiSi",FALSE,11
+"DIC","study 1","LNR_g2_r2","LNR_MiSci","LNR_MiSci",TRUE,0
+"DIC","study 1","LNR_g2_r3","LNR_MiSci","LNR_MiSci",TRUE,0
+"DIC","study 1","LNR_g2_r4","LNR_MiSci","LNR_MiSi",FALSE,22.2
+"DIC","study 1","LNR_g2_r5","LNR_MiSci","LNR_MiSci",TRUE,0
+"DIC","study 1","LNR_g3_r1","LNR_MciSi","LNR_MiSi",FALSE,92.3
+"DIC","study 1","LNR_g3_r2","LNR_MciSi","LNR_MiSi",FALSE,48.6
+"DIC","study 1","LNR_g3_r3","LNR_MciSi","LNR_MiSi",FALSE,72.5
+"DIC","study 1","LNR_g3_r4","LNR_MciSi","LNR_MiSi",FALSE,149.4
+"DIC","study 1","LNR_g3_r5","LNR_MciSi","LNR_MiSi",FALSE,106
+"DIC","study 1","LNR_g4_r1","LNR_MciSci","LNR_MiSi",FALSE,21.3
+"DIC","study 1","LNR_g4_r2","LNR_MciSci","LNR_MiSi",FALSE,63.8
+"DIC","study 1","LNR_g4_r3","LNR_MciSci","LNR_MiSi",FALSE,114
+"DIC","study 1","LNR_g4_r4","LNR_MciSci","LNR_MciSci",TRUE,0
+"DIC","study 1","LNR_g4_r5","LNR_MciSci","LNR_MciSci",TRUE,0
+"DIC","study 2","RDM_g1_r1","RDM_ViSi","RDM_ViSi",TRUE,0
+"DIC","study 2","RDM_g1_r2","RDM_ViSi","RDM_ViSi",TRUE,0
+"DIC","study 2","RDM_g1_r3","RDM_ViSi","RDM_ViSi",TRUE,0
+"DIC","study 2","RDM_g1_r4","RDM_ViSi","RDM_ViSi",TRUE,0
+"DIC","study 2","RDM_g1_r5","RDM_ViSi","RDM_ViSi",TRUE,0
+"DIC","study 2","RDM_g2_r1","RDM_ViSci","RDM_ViSi",FALSE,18.5
+"DIC","study 2","RDM_g2_r2","RDM_ViSci","RDM_ViSi",FALSE,22.5
+"DIC","study 2","RDM_g2_r3","RDM_ViSci","RDM_ViSi",FALSE,53.7
+"DIC","study 2","RDM_g2_r4","RDM_ViSci","RDM_ViSi",FALSE,23.2
+"DIC","study 2","RDM_g2_r5","RDM_ViSci","RDM_ViSi",FALSE,35.4
+"DIC","study 2","RDM_g3_r1","RDM_VciSi","RDM_ViSi",FALSE,60.2
+"DIC","study 2","RDM_g3_r2","RDM_VciSi","RDM_ViSi",FALSE,19.5
+"DIC","study 2","RDM_g3_r3","RDM_VciSi","RDM_ViSi",FALSE,34.7
+"DIC","study 2","RDM_g3_r4","RDM_VciSi","RDM_ViSi",FALSE,67.4
+"DIC","study 2","RDM_g3_r5","RDM_VciSi","RDM_ViSi",FALSE,65.8
+"DIC","study 2","RDM_g4_r1","RDM_VciSci","RDM_VciSci",TRUE,0
+"DIC","study 2","RDM_g4_r2","RDM_VciSci","RDM_ViSi",FALSE,61.1
+"DIC","study 2","RDM_g4_r3","RDM_VciSci","RDM_ViSi",FALSE,81.6
+"DIC","study 2","RDM_g4_r4","RDM_VciSci","RDM_ViSci",FALSE,4.3
+"DIC","study 2","RDM_g4_r5","RDM_VciSci","RDM_ViSi",FALSE,29
+"DIC","study 3","LBA_g1_r1","LBA_ViSi","LBA_ViSi",TRUE,0
+"DIC","study 3","LBA_g1_r2","LBA_ViSi","LBA_ViSi",TRUE,0
+"DIC","study 3","LBA_g1_r3","LBA_ViSi","LBA_ViSi",TRUE,0
+"DIC","study 3","LBA_g1_r4","LBA_ViSi","LBA_ViSi",TRUE,0
+"DIC","study 3","LBA_g1_r5","LBA_ViSi","LBA_VciSci",FALSE,8.2
+"DIC","study 3","LBA_g2_r1","LBA_ViSci","LBA_VciSci",FALSE,40.4
+"DIC","study 3","LBA_g2_r2","LBA_ViSci","LBA_BcSci",FALSE,32.8
+"DIC","study 3","LBA_g2_r3","LBA_ViSci","LBA_ViSi",FALSE,86.8
+"DIC","study 3","LBA_g2_r4","LBA_ViSci","LBA_ViSi",FALSE,17.8
+"DIC","study 3","LBA_g2_r5","LBA_ViSci","LBA_VciSci",FALSE,11.6
+"DIC","study 3","LBA_g3_r1","LBA_VciSi","LBA_VciSi",TRUE,0
+"DIC","study 3","LBA_g3_r2","LBA_VciSi","LBA_ViSi",FALSE,62.4
+"DIC","study 3","LBA_g3_r3","LBA_VciSi","LBA_ViSi",FALSE,22
+"DIC","study 3","LBA_g3_r4","LBA_VciSi","LBA_ViSi",FALSE,68.5
+"DIC","study 3","LBA_g3_r5","LBA_VciSi","LBA_ViSi",FALSE,52.4
+"DIC","study 3","LBA_g4_r1","LBA_VciSci","LBA_VciSci",TRUE,0
+"DIC","study 3","LBA_g4_r2","LBA_VciSci","LBA_ViSi",FALSE,39.6
+"DIC","study 3","LBA_g4_r3","LBA_VciSci","LBA_ViSi",FALSE,78.6
+"DIC","study 3","LBA_g4_r4","LBA_VciSci","LBA_VciSci",TRUE,0
+"DIC","study 3","LBA_g4_r5","LBA_VciSci","LBA_ViSi",FALSE,31.8
+"DIC","study 4","XA_g1_r1","RDM_ViSi","RDM_ViSi",TRUE,0
+"DIC","study 4","XA_g1_r2","RDM_ViSi","RDM_ViSi",TRUE,0
+"DIC","study 4","XA_g1_r3","RDM_ViSi","RDM_ViSi",TRUE,0
+"DIC","study 4","XA_g1_r4","RDM_ViSi","RDM_ViSi",TRUE,0
+"DIC","study 4","XA_g1_r5","RDM_ViSi","RDM_ViSi",TRUE,0
+"DIC","study 4","XA_g2_r1","DDM_BiVc","DDM_BiVc",TRUE,0
+"DIC","study 4","XA_g2_r2","DDM_BiVc","DDM_BiVc",TRUE,0
+"DIC","study 4","XA_g2_r3","DDM_BiVc","DDM_BiVc",TRUE,0
+"DIC","study 4","XA_g2_r4","DDM_BiVc","DDM_BiVc",TRUE,0
+"DIC","study 4","XA_g2_r5","DDM_BiVc","DDM_BiVc",TRUE,0
+"DIC","study 5, G1 data","c1_g1_r1","Simon_RDM_Bi","Bi",TRUE,0
+"DIC","study 5, G1 data","c1_g1_r2","Simon_RDM_Bi","Bi",TRUE,0
+"DIC","study 5, G1 data","c1_g1_r3","Simon_RDM_Bi","Bi",TRUE,0
+"DIC","study 5, G1 data","c1_g1_r4","Simon_RDM_Bi","Bi",TRUE,0
+"DIC","study 5, G1 data","c1_g1_r5","Simon_RDM_Bi","Bi",TRUE,0
+"DIC","study 5, G1 data","c2_g1_r1","Simon_LBA_Bi","Bi",TRUE,0
+"DIC","study 5, G1 data","c2_g1_r2","Simon_LBA_Bi","Bi",TRUE,0
+"DIC","study 5, G1 data","c2_g1_r3","Simon_LBA_Bi","Bi",TRUE,0
+"DIC","study 5, G1 data","c2_g1_r4","Simon_LBA_Bi","Bi",TRUE,0
+"DIC","study 5, G1 data","c2_g1_r5","Simon_LBA_Bi","Bi",TRUE,0
+"DIC","study 5, G1 data","c3_g1_r1","Stroop_LNR_Mi","Mci",FALSE,14.1
+"DIC","study 5, G1 data","c3_g1_r2","Stroop_LNR_Mi","Mi",TRUE,0
+"DIC","study 5, G1 data","c3_g1_r3","Stroop_LNR_Mi","Mi",TRUE,0
+"DIC","study 5, G1 data","c3_g1_r4","Stroop_LNR_Mi","Mi",TRUE,0
+"DIC","study 5, G1 data","c3_g1_r5","Stroop_LNR_Mi","Mi",TRUE,0
+"DIC","study 5, G1 data","c4_g1_r1","Stroop_LBA_Vi","Vi",TRUE,0
+"DIC","study 5, G1 data","c4_g1_r2","Stroop_LBA_Vi","Vi",TRUE,0
+"DIC","study 5, G1 data","c4_g1_r3","Stroop_LBA_Vi","Vi",TRUE,0
+"DIC","study 5, G1 data","c4_g1_r4","Stroop_LBA_Vi","Vci",FALSE,27.8
+"DIC","study 5, G1 data","c4_g1_r5","Stroop_LBA_Vi","Vi",TRUE,0
+"DIC","study 5, G1 data","c5_g1_r1","ANT_RDM_Bi","Bi",TRUE,0
+"DIC","study 5, G1 data","c5_g1_r2","ANT_RDM_Bi","Bi",TRUE,0
+"DIC","study 5, G1 data","c5_g1_r3","ANT_RDM_Bi","Bi",TRUE,0
+"DIC","study 5, G1 data","c5_g1_r4","ANT_RDM_Bi","Bi",TRUE,0
+"DIC","study 5, G1 data","c5_g1_r5","ANT_RDM_Bi","Bi",TRUE,0
+"DIC","study 5, G1 data","c6_g1_r1","ANT_LBA_Bi","BiSi",FALSE,5.9
+"DIC","study 5, G1 data","c6_g1_r2","ANT_LBA_Bi","Bi",TRUE,0
+"DIC","study 5, G1 data","c6_g1_r3","ANT_LBA_Bi","Bi",TRUE,0
+"DIC","study 5, G1 data","c6_g1_r4","ANT_LBA_Bi","Bi",TRUE,0
+"DIC","study 5, G1 data","c6_g1_r5","ANT_LBA_Bi","Bi",TRUE,0
+"DIC","study 5, G1 data","c7_g1_r1","Stroop_RDM_Vi","Vi",TRUE,0
+"DIC","study 5, G1 data","c7_g1_r2","Stroop_RDM_Vi","Vi",TRUE,0
+"DIC","study 5, G1 data","c7_g1_r3","Stroop_RDM_Vi","Vi",TRUE,0
+"DIC","study 5, G1 data","c7_g1_r4","Stroop_RDM_Vi","Vi",TRUE,0
+"DIC","study 5, G1 data","c7_g1_r5","Stroop_RDM_Vi","Vi",TRUE,0
+"DIC","study 5, G2 data","c1_g2_r1","Simon_RDM_ViSi","VcSi",FALSE,18.2
+"DIC","study 5, G2 data","c1_g2_r2","Simon_RDM_ViSi","ViSi",TRUE,0
+"DIC","study 5, G2 data","c1_g2_r3","Simon_RDM_ViSi","VcSi",FALSE,25.9
+"DIC","study 5, G2 data","c1_g2_r4","Simon_RDM_ViSi","BiSi",FALSE,5.4
+"DIC","study 5, G2 data","c1_g2_r5","Simon_RDM_ViSi","ViSi",TRUE,0
+"DIC","study 5, G2 data","c2_g2_r1","Simon_LBA_Bci","Bci",TRUE,0
+"DIC","study 5, G2 data","c2_g2_r2","Simon_LBA_Bci","Bci",TRUE,0
+"DIC","study 5, G2 data","c2_g2_r3","Simon_LBA_Bci","Bci",TRUE,0
+"DIC","study 5, G2 data","c2_g2_r4","Simon_LBA_Bci","Bci",TRUE,0
+"DIC","study 5, G2 data","c2_g2_r5","Simon_LBA_Bci","Bci",TRUE,0
+"DIC","study 5, G2 data","c3_g2_r1","Stroop_LNR_MiSi","MiSi",TRUE,0
+"DIC","study 5, G2 data","c3_g2_r2","Stroop_LNR_MiSi","Mi",FALSE,35.2
+"DIC","study 5, G2 data","c3_g2_r3","Stroop_LNR_MiSi","MiSi",TRUE,0
+"DIC","study 5, G2 data","c3_g2_r4","Stroop_LNR_MiSi","MiSi",TRUE,0
+"DIC","study 5, G2 data","c3_g2_r5","Stroop_LNR_MiSi","MiSi",TRUE,0
+"DIC","study 5, G2 data","c4_g2_r1","Stroop_LBA_Vci","Vi",FALSE,8.9
+"DIC","study 5, G2 data","c4_g2_r2","Stroop_LBA_Vci","Vi",FALSE,19.2
+"DIC","study 5, G2 data","c4_g2_r3","Stroop_LBA_Vci","Vi",FALSE,19.5
+"DIC","study 5, G2 data","c4_g2_r4","Stroop_LBA_Vci","Vi",FALSE,37.8
+"DIC","study 5, G2 data","c4_g2_r5","Stroop_LBA_Vci","Vi",FALSE,20.1
+"DIC","study 5, G2 data","c5_g2_r1","ANT_RDM_BiVc","Bi",FALSE,32.5
+"DIC","study 5, G2 data","c5_g2_r2","ANT_RDM_BiVc","Bi",FALSE,9
+"DIC","study 5, G2 data","c5_g2_r3","ANT_RDM_BiVc","Bi",FALSE,17.9
+"DIC","study 5, G2 data","c5_g2_r4","ANT_RDM_BiVc","Bi",FALSE,52.8
+"DIC","study 5, G2 data","c5_g2_r5","ANT_RDM_BiVc","BiVc",TRUE,0
+"DIC","study 5, G2 data","c6_g2_r1","ANT_LBA_ViSi","ViSi",TRUE,0
+"DIC","study 5, G2 data","c6_g2_r2","ANT_LBA_ViSi","ViSi",TRUE,0
+"DIC","study 5, G2 data","c6_g2_r3","ANT_LBA_ViSi","ViSi",TRUE,0
+"DIC","study 5, G2 data","c6_g2_r4","ANT_LBA_ViSi","ViSi",TRUE,0
+"DIC","study 5, G2 data","c6_g2_r5","ANT_LBA_ViSi","ViSi",TRUE,0
+"DIC","study 5, G2 data","c7_g2_r1","Stroop_RDM_ViSi","BiSi",FALSE,5.2
+"DIC","study 5, G2 data","c7_g2_r2","Stroop_RDM_ViSi","ViSi",TRUE,0
+"DIC","study 5, G2 data","c7_g2_r3","Stroop_RDM_ViSi","ViSi",TRUE,0
+"DIC","study 5, G2 data","c7_g2_r4","Stroop_RDM_ViSi","ViSi",TRUE,0
+"DIC","study 5, G2 data","c7_g2_r5","Stroop_RDM_ViSi","ViSi",TRUE,0
+"BPIC","study 1","LNR_g1_r1","LNR_MiSi","LNR_MiSi",TRUE,0
+"BPIC","study 1","LNR_g1_r2","LNR_MiSi","LNR_MiSi",TRUE,0
+"BPIC","study 1","LNR_g1_r3","LNR_MiSi","LNR_MiSi",TRUE,0
+"BPIC","study 1","LNR_g1_r4","LNR_MiSi","LNR_MiSi",TRUE,0
+"BPIC","study 1","LNR_g1_r5","LNR_MiSi","LNR_MiSi",TRUE,0
+"BPIC","study 1","LNR_g2_r1","LNR_MiSci","LNR_MiSi",FALSE,260.5
+"BPIC","study 1","LNR_g2_r2","LNR_MiSci","LNR_MiSi",FALSE,217.6
+"BPIC","study 1","LNR_g2_r3","LNR_MiSci","LNR_MiSi",FALSE,138.1
+"BPIC","study 1","LNR_g2_r4","LNR_MiSci","LNR_MiSi",FALSE,247.9
+"BPIC","study 1","LNR_g2_r5","LNR_MiSci","LNR_MiSi",FALSE,200.8
+"BPIC","study 1","LNR_g3_r1","LNR_MciSi","LNR_MiSi",FALSE,274.5
+"BPIC","study 1","LNR_g3_r2","LNR_MciSi","LNR_MiSi",FALSE,239.5
+"BPIC","study 1","LNR_g3_r3","LNR_MciSi","LNR_MiSi",FALSE,291.5
+"BPIC","study 1","LNR_g3_r4","LNR_MciSi","LNR_MiSi",FALSE,334.2
+"BPIC","study 1","LNR_g3_r5","LNR_MciSi","LNR_MiSi",FALSE,321.8
+"BPIC","study 1","LNR_g4_r1","LNR_MciSci","LNR_MiSi",FALSE,392.7
+"BPIC","study 1","LNR_g4_r2","LNR_MciSci","LNR_MiSi",FALSE,450.6
+"BPIC","study 1","LNR_g4_r3","LNR_MciSci","LNR_MiSi",FALSE,504.8
+"BPIC","study 1","LNR_g4_r4","LNR_MciSci","LNR_MiSi",FALSE,259.5
+"BPIC","study 1","LNR_g4_r5","LNR_MciSci","LNR_MiSi",FALSE,248
+"BPIC","study 2","RDM_g1_r1","RDM_ViSi","RDM_ViSi",TRUE,0
+"BPIC","study 2","RDM_g1_r2","RDM_ViSi","RDM_ViSi",TRUE,0
+"BPIC","study 2","RDM_g1_r3","RDM_ViSi","RDM_ViSi",TRUE,0
+"BPIC","study 2","RDM_g1_r4","RDM_ViSi","RDM_ViSi",TRUE,0
+"BPIC","study 2","RDM_g1_r5","RDM_ViSi","RDM_ViSi",TRUE,0
+"BPIC","study 2","RDM_g2_r1","RDM_ViSci","RDM_ViSi",FALSE,291.3
+"BPIC","study 2","RDM_g2_r2","RDM_ViSci","RDM_ViSi",FALSE,280.4
+"BPIC","study 2","RDM_g2_r3","RDM_ViSci","RDM_ViSi",FALSE,334.6
+"BPIC","study 2","RDM_g2_r4","RDM_ViSci","RDM_ViSi",FALSE,319.7
+"BPIC","study 2","RDM_g2_r5","RDM_ViSci","RDM_ViSi",FALSE,304.6
+"BPIC","study 2","RDM_g3_r1","RDM_VciSi","RDM_ViSi",FALSE,106.2
+"BPIC","study 2","RDM_g3_r2","RDM_VciSi","RDM_ViSi",FALSE,54.9
+"BPIC","study 2","RDM_g3_r3","RDM_VciSi","RDM_ViSi",FALSE,52.4
+"BPIC","study 2","RDM_g3_r4","RDM_VciSi","RDM_ViSi",FALSE,109.9
+"BPIC","study 2","RDM_g3_r5","RDM_VciSi","RDM_ViSi",FALSE,105.4
+"BPIC","study 2","RDM_g4_r1","RDM_VciSci","RDM_ViSi",FALSE,219.7
+"BPIC","study 2","RDM_g4_r2","RDM_VciSci","RDM_ViSi",FALSE,313.7
+"BPIC","study 2","RDM_g4_r3","RDM_VciSci","RDM_ViSi",FALSE,331.5
+"BPIC","study 2","RDM_g4_r4","RDM_VciSci","RDM_ViSi",FALSE,245.5
+"BPIC","study 2","RDM_g4_r5","RDM_VciSci","RDM_ViSi",FALSE,193.9
+"BPIC","study 3","LBA_g1_r1","LBA_ViSi","LBA_ViSi",TRUE,0
+"BPIC","study 3","LBA_g1_r2","LBA_ViSi","LBA_ViSi",TRUE,0
+"BPIC","study 3","LBA_g1_r3","LBA_ViSi","LBA_ViSi",TRUE,0
+"BPIC","study 3","LBA_g1_r4","LBA_ViSi","LBA_ViSi",TRUE,0
+"BPIC","study 3","LBA_g1_r5","LBA_ViSi","LBA_VciSci",FALSE,2.8
+"BPIC","study 3","LBA_g2_r1","LBA_ViSci","LBA_ViSi",FALSE,147.5
+"BPIC","study 3","LBA_g2_r2","LBA_ViSci","LBA_ViSi",FALSE,347.4
+"BPIC","study 3","LBA_g2_r3","LBA_ViSci","LBA_ViSi",FALSE,331.6
+"BPIC","study 3","LBA_g2_r4","LBA_ViSci","LBA_ViSi",FALSE,268.1
+"BPIC","study 3","LBA_g2_r5","LBA_ViSci","LBA_ViSi",FALSE,238.4
+"BPIC","study 3","LBA_g3_r1","LBA_VciSi","LBA_VciSi",TRUE,0
+"BPIC","study 3","LBA_g3_r2","LBA_VciSi","LBA_ViSi",FALSE,107.1
+"BPIC","study 3","LBA_g3_r3","LBA_VciSi","LBA_ViSi",FALSE,30.3
+"BPIC","study 3","LBA_g3_r4","LBA_VciSi","LBA_ViSi",FALSE,123.2
+"BPIC","study 3","LBA_g3_r5","LBA_VciSi","LBA_ViSi",FALSE,97.7
+"BPIC","study 3","LBA_g4_r1","LBA_VciSci","LBA_ViSi",FALSE,257.8
+"BPIC","study 3","LBA_g4_r2","LBA_VciSci","LBA_ViSi",FALSE,342.9
+"BPIC","study 3","LBA_g4_r3","LBA_VciSci","LBA_ViSi",FALSE,353.8
+"BPIC","study 3","LBA_g4_r4","LBA_VciSci","LBA_ViSi",FALSE,177
+"BPIC","study 3","LBA_g4_r5","LBA_VciSci","LBA_ViSi",FALSE,234.7
+"BPIC","study 4","XA_g1_r1","RDM_ViSi","RDM_ViSi",TRUE,0
+"BPIC","study 4","XA_g1_r2","RDM_ViSi","RDM_ViSi",TRUE,0
+"BPIC","study 4","XA_g1_r3","RDM_ViSi","RDM_ViSi",TRUE,0
+"BPIC","study 4","XA_g1_r4","RDM_ViSi","RDM_ViSi",TRUE,0
+"BPIC","study 4","XA_g1_r5","RDM_ViSi","RDM_ViSi",TRUE,0
+"BPIC","study 4","XA_g2_r1","DDM_BiVc","DDM_BiVc",TRUE,0
+"BPIC","study 4","XA_g2_r2","DDM_BiVc","DDM_BiVc",TRUE,0
+"BPIC","study 4","XA_g2_r3","DDM_BiVc","DDM_BiVc",TRUE,0
+"BPIC","study 4","XA_g2_r4","DDM_BiVc","DDM_BiVc",TRUE,0
+"BPIC","study 4","XA_g2_r5","DDM_BiVc","DDM_BiVc",TRUE,0
+"BPIC","study 5, G1 data","c1_g1_r1","Simon_RDM_Bi","Bi",TRUE,0
+"BPIC","study 5, G1 data","c1_g1_r2","Simon_RDM_Bi","Bi",TRUE,0
+"BPIC","study 5, G1 data","c1_g1_r3","Simon_RDM_Bi","Bi",TRUE,0
+"BPIC","study 5, G1 data","c1_g1_r4","Simon_RDM_Bi","Bi",TRUE,0
+"BPIC","study 5, G1 data","c1_g1_r5","Simon_RDM_Bi","Bi",TRUE,0
+"BPIC","study 5, G1 data","c2_g1_r1","Simon_LBA_Bi","Bi",TRUE,0
+"BPIC","study 5, G1 data","c2_g1_r2","Simon_LBA_Bi","Bi",TRUE,0
+"BPIC","study 5, G1 data","c2_g1_r3","Simon_LBA_Bi","Bi",TRUE,0
+"BPIC","study 5, G1 data","c2_g1_r4","Simon_LBA_Bi","Bi",TRUE,0
+"BPIC","study 5, G1 data","c2_g1_r5","Simon_LBA_Bi","Bi",TRUE,0
+"BPIC","study 5, G1 data","c3_g1_r1","Stroop_LNR_Mi","Mci",FALSE,29
+"BPIC","study 5, G1 data","c3_g1_r2","Stroop_LNR_Mi","Mi",TRUE,0
+"BPIC","study 5, G1 data","c3_g1_r3","Stroop_LNR_Mi","Mi",TRUE,0
+"BPIC","study 5, G1 data","c3_g1_r4","Stroop_LNR_Mi","Mi",TRUE,0
+"BPIC","study 5, G1 data","c3_g1_r5","Stroop_LNR_Mi","Mi",TRUE,0
+"BPIC","study 5, G1 data","c4_g1_r1","Stroop_LBA_Vi","Vi",TRUE,0
+"BPIC","study 5, G1 data","c4_g1_r2","Stroop_LBA_Vi","Vi",TRUE,0
+"BPIC","study 5, G1 data","c4_g1_r3","Stroop_LBA_Vi","Vi",TRUE,0
+"BPIC","study 5, G1 data","c4_g1_r4","Stroop_LBA_Vi","Vci",FALSE,58
+"BPIC","study 5, G1 data","c4_g1_r5","Stroop_LBA_Vi","Vi",TRUE,0
+"BPIC","study 5, G1 data","c5_g1_r1","ANT_RDM_Bi","Bi",TRUE,0
+"BPIC","study 5, G1 data","c5_g1_r2","ANT_RDM_Bi","Bi",TRUE,0
+"BPIC","study 5, G1 data","c5_g1_r3","ANT_RDM_Bi","Bi",TRUE,0
+"BPIC","study 5, G1 data","c5_g1_r4","ANT_RDM_Bi","Bi",TRUE,0
+"BPIC","study 5, G1 data","c5_g1_r5","ANT_RDM_Bi","Bi",TRUE,0
+"BPIC","study 5, G1 data","c6_g1_r1","ANT_LBA_Bi","BiSi",FALSE,7.5
+"BPIC","study 5, G1 data","c6_g1_r2","ANT_LBA_Bi","Bi",TRUE,0
+"BPIC","study 5, G1 data","c6_g1_r3","ANT_LBA_Bi","Bi",TRUE,0
+"BPIC","study 5, G1 data","c6_g1_r4","ANT_LBA_Bi","Bi",TRUE,0
+"BPIC","study 5, G1 data","c6_g1_r5","ANT_LBA_Bi","Bi",TRUE,0
+"BPIC","study 5, G1 data","c7_g1_r1","Stroop_RDM_Vi","Vi",TRUE,0
+"BPIC","study 5, G1 data","c7_g1_r2","Stroop_RDM_Vi","Vi",TRUE,0
+"BPIC","study 5, G1 data","c7_g1_r3","Stroop_RDM_Vi","Vi",TRUE,0
+"BPIC","study 5, G1 data","c7_g1_r4","Stroop_RDM_Vi","Vi",TRUE,0
+"BPIC","study 5, G1 data","c7_g1_r5","Stroop_RDM_Vi","Vi",TRUE,0
+"BPIC","study 5, G2 data","c1_g2_r1","Simon_RDM_ViSi","Bi",FALSE,228.1
+"BPIC","study 5, G2 data","c1_g2_r2","Simon_RDM_ViSi","Bi",FALSE,322.8
+"BPIC","study 5, G2 data","c1_g2_r3","Simon_RDM_ViSi","Bi",FALSE,344.1
+"BPIC","study 5, G2 data","c1_g2_r4","Simon_RDM_ViSi","Bi",FALSE,265.6
+"BPIC","study 5, G2 data","c1_g2_r5","Simon_RDM_ViSi","Bi",FALSE,226.1
+"BPIC","study 5, G2 data","c2_g2_r1","Simon_LBA_Bci","Bci",TRUE,0
+"BPIC","study 5, G2 data","c2_g2_r2","Simon_LBA_Bci","Bi",FALSE,47.4
+"BPIC","study 5, G2 data","c2_g2_r3","Simon_LBA_Bci","Bi",FALSE,86
+"BPIC","study 5, G2 data","c2_g2_r4","Simon_LBA_Bci","Bi",FALSE,32.4
+"BPIC","study 5, G2 data","c2_g2_r5","Simon_LBA_Bci","Bci",TRUE,0
+"BPIC","study 5, G2 data","c3_g2_r1","Stroop_LNR_MiSi","Mci",FALSE,329.8
+"BPIC","study 5, G2 data","c3_g2_r2","Stroop_LNR_MiSi","Mi",FALSE,387.7
+"BPIC","study 5, G2 data","c3_g2_r3","Stroop_LNR_MiSi","Mi",FALSE,320.2
+"BPIC","study 5, G2 data","c3_g2_r4","Stroop_LNR_MiSi","Mi",FALSE,308.3
+"BPIC","study 5, G2 data","c3_g2_r5","Stroop_LNR_MiSi","Mi",FALSE,384.5
+"BPIC","study 5, G2 data","c4_g2_r1","Stroop_LBA_Vci","Vi",FALSE,20.2
+"BPIC","study 5, G2 data","c4_g2_r2","Stroop_LBA_Vci","Vi",FALSE,39.2
+"BPIC","study 5, G2 data","c4_g2_r3","Stroop_LBA_Vci","Vi",FALSE,37.6
+"BPIC","study 5, G2 data","c4_g2_r4","Stroop_LBA_Vci","Vi",FALSE,65.8
+"BPIC","study 5, G2 data","c4_g2_r5","Stroop_LBA_Vci","Vi",FALSE,45.5
+"BPIC","study 5, G2 data","c5_g2_r1","ANT_RDM_BiVc","Bi",FALSE,56.6
+"BPIC","study 5, G2 data","c5_g2_r2","ANT_RDM_BiVc","Bi",FALSE,12.4
+"BPIC","study 5, G2 data","c5_g2_r3","ANT_RDM_BiVc","Bi",FALSE,23
+"BPIC","study 5, G2 data","c5_g2_r4","ANT_RDM_BiVc","Bi",FALSE,99.5
+"BPIC","study 5, G2 data","c5_g2_r5","ANT_RDM_BiVc","BiVc",TRUE,0
+"BPIC","study 5, G2 data","c6_g2_r1","ANT_LBA_ViSi","Bi",FALSE,71.4
+"BPIC","study 5, G2 data","c6_g2_r2","ANT_LBA_ViSi","ViSi",TRUE,0
+"BPIC","study 5, G2 data","c6_g2_r3","ANT_LBA_ViSi","ViSi",TRUE,0
+"BPIC","study 5, G2 data","c6_g2_r4","ANT_LBA_ViSi","Bi",FALSE,70.3
+"BPIC","study 5, G2 data","c6_g2_r5","ANT_LBA_ViSi","Bi",FALSE,69.2
+"BPIC","study 5, G2 data","c7_g2_r1","Stroop_RDM_ViSi","Vi",FALSE,167.2
+"BPIC","study 5, G2 data","c7_g2_r2","Stroop_RDM_ViSi","Vi",FALSE,118.8
+"BPIC","study 5, G2 data","c7_g2_r3","Stroop_RDM_ViSi","Vci",FALSE,104.8
+"BPIC","study 5, G2 data","c7_g2_r4","Stroop_RDM_ViSi","Vi",FALSE,97
+"BPIC","study 5, G2 data","c7_g2_r5","Stroop_RDM_ViSi","Vi",FALSE,356.7

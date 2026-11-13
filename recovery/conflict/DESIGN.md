@@ -72,3 +72,23 @@ To rerun:
 2. fit with set `jmh-rec5`
 3. summarise
 4. `score_rec5.R`, `dic_variants.R`, `recovery_figs.R`
+
+## Why not BPIC (`bpic.R`; `bpic_recovery.csv`, `bpic_sets.csv`)
+
+BPIC (Ando, 2007) is meanD + 2 pD, the best-draw DIC with pD counted twice; here BPIC = 2 DIC − meanD from the stored
+per-fit values (`meanD` in `recovery_jm.csv` and `recovery_rec5.csv`). Rescoring every conflict study by BPIC:
+
+| study | sets | DIC recovered | DIC largest wrong-winner gap | BPIC recovered | BPIC largest wrong-winner gap |
+|---|---|---|---|---|---|
+| 1 LNR | 20 | 10 | 149.4 | 5 | 504.8 |
+| 2 RDM | 20 | 6 | 81.6 | 5 | 334.6 |
+| 3 LBA | 20 | 7 | 86.8 | 5 | 353.8 |
+| 4 cross-architecture | 10 | 10 | 0 | 10 | 0 |
+| 5, G1 (one-mechanism) data | 35 | 32 | 27.8 | 32 | 58.0 |
+| 5, G2 (two-mechanism) data | 35 | 21 | 52.8 | 5 | 387.7 |
+
+Within an architecture BPIC recovers essentially only the simplest generator (ViSi / MiSi in studies 1–3, plus one
+LBA VciSi set; all study 5 G1 sets but 5 of 35 G2 sets), and its wrong winners, all simpler than the generator where
+the criteria disagree, win by up to 505. Its threshold on these studies would be about 500 against DIC's 150. Between
+architectures (study 4, and the choice study) both criteria recover every set. So the conflict tasks are scored by DIC
+only; BPIC is reported only for simple choice, as a check on the close DDM–LBA comparison.

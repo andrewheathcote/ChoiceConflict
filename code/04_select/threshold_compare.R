@@ -4,7 +4,8 @@
 ## mechanisms is supported over one with fewer if it leads by > ADD (50; complex wrong winners reached 40 and 28); a
 ## model with FEWER mechanisms, or a same-size rival, or another architecture, needs > DROP (149; simpler wrong winners
 ## reached 149.4 and 53; DROP is the floor, 150). Mechanisms are the tokens of floor_within_jm.R (Vci = Vc + Vi). Only displayed models
-## (display_converged); the best of an architecture must have met the stop rule; (r) marks ridge-only.
+## (display_converged); the best of an architecture may be partially converged (Andrew, 2026-11-10; it had to meet the
+## stop rule before), as in the heat grids; (p) marks partially converged.
 ADD <- 50; DROP <- 150
 CODE <- local({ d <- dirname(normalizePath(sub("--file=", "", grep("--file=", commandArgs(FALSE), value = TRUE)))); while (!file.exists(file.path(d, "config.R"))) d <- dirname(d); d })
 source(file.path(CODE, "config.R"))
@@ -13,7 +14,7 @@ d$var <- sub("^[^_]+_[^_]+_", "", d$spec)
 tok <- function(v) { m <- regmatches(v, gregexpr("(SV|[A-Z])[ci]*", v))[[1]]
   unlist(lapply(m, function(t) { p <- sub("[ci]+$", "", t); s <- sub("^(SV|[A-Z])", "", t); paste0(p, strsplit(s, "")[[1]]) })) }
 d$tk <- lapply(d$var, tok); d$n <- lengths(d$tk); d$met <- d$class == "converged"
-lab <- function(x) paste0(x$var, ifelse(x$met, "", "(r)"))
+lab <- function(x) paste0(x$var, ifelse(x$met, "", "(p)"))
 TA <- expand.grid(arch = c("LNR", "RDM", "LBA", "WDM", "DDM"), task = c("Simon", "Stroop", "ANT"), stringsAsFactors = FALSE)[, 2:1]
 
 cat("=== 1. Nested pairs: child = parent + one mechanism. Changes are pairs where the child leads by", ADD, "to", DROP, "\n")
@@ -34,8 +35,8 @@ write_out(P, tab_path("threshold_compare_pairs.csv"))
 cat("\n=== 2. Mechanism necessity: best model without m vs the architecture's best (met rule).\n")
 cat("    single: needed if the gap > 150. directional: > 50 when the best model without m has fewer mechanisms than the best, else > 150\n")
 N <- NULL
-for (r in seq_len(nrow(TA))) { x <- d[d$task == TA$task[r] & d$arch == TA$arch[r], ]; if (!nrow(x) || !any(x$met)) next
-  b <- x[x$met, ]; b <- b[which.min(b$DIC), ]
+for (r in seq_len(nrow(TA))) { x <- d[d$task == TA$task[r] & d$arch == TA$arch[r], ]; if (!nrow(x)) next
+  b <- x[which.min(x$DIC), ]
   for (m in b$tk[[1]]) { wo <- x[!sapply(x$tk, function(t) m %in% t), ]; if (!nrow(wo)) next
     w <- wo[which.min(wo$DIC), ]; g <- w$DIC - b$DIC; thr <- if (w$n < b$n) ADD else DROP
     N <- rbind(N, data.frame(task = b$task, arch = b$arch, best = lab(b), mech = m, best_without = lab(w), gap = round(g),
@@ -47,8 +48,8 @@ write_out(N, tab_path("threshold_compare_mechs.csv"))
 cat("\n=== 3. Contenders within an architecture: models not separable from its best (met rule).\n")
 cat("    single: within 150. directional: within 50 if it has fewer mechanisms than the best, else within 150\n")
 C <- NULL
-for (r in seq_len(nrow(TA))) { x <- d[d$task == TA$task[r] & d$arch == TA$arch[r], ]; if (!nrow(x) || !any(x$met)) next
-  b <- x[x$met, ]; b <- b[which.min(b$DIC), ]; o <- x[x$spec != b$spec, ]; g <- o$DIC - b$DIC
+for (r in seq_len(nrow(TA))) { x <- d[d$task == TA$task[r] & d$arch == TA$arch[r], ]; if (!nrow(x)) next
+  b <- x[which.min(x$DIC), ]; o <- x[x$spec != b$spec, ]; g <- o$DIC - b$DIC
   fewer <- o$n < b$n                                                        # fewer mechanisms, nested or not (study 5: Bi vs ViSi)
   s1 <- g <= DROP; s2 <- g <= ifelse(fewer, ADD, DROP)
   C <- rbind(C, data.frame(task = b$task, arch = b$arch, best = lab(b), shown = nrow(x), single = sum(s1), directional = sum(s2),

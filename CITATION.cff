@@ -1,9 +1,9 @@
 cff-version: 1.2.0
 message: "If you use this code or the supplement, please cite the paper and this software record."
-title: "ChoiceConflict: code and supplement for 'Racing to Controlling Decision Conflict'"
+title: "ChoiceConflict: code and supplement for 'Racing to Control Decision Conflict'"
 version: 1.0.0
 license: GPL-3.0-or-later
-repository-code: "https://github.com/OWNER/ChoiceConflict"
+repository-code: "https://github.com/andrewheathcote/ChoiceConflict"
 authors:
   - family-names: Heathcote
     given-names: Andrew
@@ -29,7 +29,7 @@ keywords:
   - hierarchical Bayesian estimation
 preferred-citation:
   type: article
-  title: "Racing to Controlling Decision Conflict"
+  title: "Racing to Control Decision Conflict"
   authors:
     - family-names: Heathcote
       given-names: Andrew

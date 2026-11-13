@@ -1,4 +1,4 @@
-## Conditional best-draw DIC for the 50 choice recovery fits (label jmdrc), on their own build (4f1fa123), exactly as
+## Conditional best-draw DIC for the 50 choice recovery fits (label jmdrc2; race mean rate free), on their own build (4f1fa123), exactly as
 ## 04_select/choice_dic.R scores the real fits. Read-only on the fits.
 ##   Rscript code/08_recovery/choice/dic.R      -> recovery/choice/recch_dic.csv
 ## From newsampler/gadi/choice_rec/recch_dic.R.
@@ -8,7 +8,7 @@ SHA <- use_build(BUILD[["choice"]])
 WORK <- Sys.getenv("CC_RECOVERY_WORK", file.path(ROOT, "recovery_work"))
 map <- read.csv(file.path(WORK, "recch_map.csv"), stringsAsFactors = FALSE)
 rows <- lapply(map$spec, function(s) {
-  f <- file.path(WORK, "fits", paste0(s, "_jmdrc.RData")); txt <- readLines(file.path(WORK, "fits", paste0(s, "_jmdrc.txt")))
+  f <- file.path(WORK, "fits", paste0(s, "_jmdrc2.RData")); txt <- readLines(file.path(WORK, "fits", paste0(s, "_jmdrc2.txt")))
   ev <- new.env(); nm <- load(f, envir = ev); e <- ev[[nm[1]]]; rm(ev)
   ic <- compare(list(m = e), BayesFactor = FALSE, WAIC = FALSE, type = "conditional", use_best_fit = TRUE, print_summary = FALSE)
   data.frame(spec = s, n_par = length(e[[1]]$par_names), ic,

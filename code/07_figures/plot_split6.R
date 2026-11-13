@@ -44,7 +44,7 @@ OUT <- file.path(OUTDIR, emc2_name("split6", sprintf("%s_X%d", MODEL, X)))
 pdf(OUT, width = 16, height = 6.4)
 par(mfrow = c(2, 6), mar = c(2.4, 2.4, 0.6, 0.4), oma = c(2.2, 2.8, 0.4, 0.4), mgp = c(1.4, 0.45, 0), tcl = -0.25)
 for (side in c("inc", "dec")) for (meas in c("delta", "caf")) for (TK in TASKS) {
-  invisible(draw(TK, meas, side, LIM[[meas]])); label_emc2(TK, meas) }
+  invisible(draw(TK, meas, side, LIM[[meas]])); label_emc2(TK, meas, cex = 1.5 * 0.95) }   # task labels 1.5x (Andrew, 2026-11-10)
 mtext(c("Decreasers", "Increasers"), side = 2, outer = TRUE, line = 1.2, cex = 0.95, font = 2, at = c(0.25, 0.75))
 mtext("Average RT (seconds)   /   Bin Centre (%)", side = 1, outer = TRUE, line = 0.9, cex = 0.85)
 invisible(dev.off()); cat("wrote", OUT, "\n")
