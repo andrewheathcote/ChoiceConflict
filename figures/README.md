@@ -1,7 +1,8 @@
 # Figures
 
 Every figure of the paper and the supplement, as drawn by `code/run_stage.R figures` (the script that draws each is in
-the last column; the supplement's S8 describes them). Figures 1–3, 5 and 6 of the paper are diagrams, not data.
+the last column; the supplement's S8 describes them). Figures 1–3, 5 and 6 of the paper are diagrams drawn outside
+this archive; Figure 14 is a diagram drawn here from schematic values.
 
 | figure | file | drawn by |
 |---|---|---|
@@ -11,6 +12,7 @@ the last column; the supplement's S8 describes them). Figures 1–3, 5 and 6 of 
 | paper 11 | `models6_Stroop_delta_ANT_caf_3rowRDM.pdf` | `07_figures/plot_models6_mix.R Stroop ANT RDM` |
 | paper 12 | `mech_null_RDM_ViSi_grid.pdf` | `07_figures/plot_mech_null_grid.R` (knockouts: `06_predict/pp_null.R`) |
 | paper 13 | `effects.pdf` | `07_figures/plot_effects.R` |
+| paper 14 | `attention_control.pdf` | `07_figures/plot_attention.R` |
 | S1 | `grid_dic_{Simon,Stroop,ANT}.pdf` | as paper 7–9 |
 | S2 | `grid_delta_{Simon,Stroop,ANT}.pdf` | `07_figures/plot_heat_grid.R delta` |
 | S3 | `grid_caf_{Simon,Stroop,ANT}.pdf` | `07_figures/plot_heat_grid.R caf` |

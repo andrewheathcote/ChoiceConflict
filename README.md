@@ -27,7 +27,7 @@ To assemble a working archive: clone the repository and unpack the data record's
 
 ```
 README.md  LICENSE (GPL-3)  LICENSE-CC-BY-4.0.txt  CITATION.cff  .zenodo.json
-doc/       supplement.docx (the supplement), src/ (its Markdown + LaTeX source), make_tables.R, build.sh
+doc/       supplement.docx (the supplement, edited in Word) and supplement.pdf (the same as PDF)
 code/      config.R (paths, builds), run_stage.R (one entry point per stage), lib/ (shared functions)
            00_data  01_specs  02_fit  03_classify  04_select  05_floors  06_predict  07_figures  08_recovery
 builds/    EMC2_<sha>.tar.gz (11 builds), BUILDS.csv (which fits each made), install_builds.sh
@@ -87,7 +87,7 @@ What was checked when the archive was built (2026-11-07):
   - unchanged: choice, choice recovery, convergence grids, models6 ANT and Stroop, best5 Stroop;
   - changed by the subject-level predictives, which replaced the earlier population-level ones: the delta and CAF grids, and three best5 picks (ANT CAF row WDM VcSc → BiVc; Simon WDM BiSc → Bi in the delta row and → BiVc in the CAF row);
   - changed by the restricted Simon LNR refits (S3): grid_dic_Simon and models6_Simon (the LNR MciSci panel); grid_dic_ANT and grid_dic_Stroop move slightly through the shared colour scale.
-- **Online record alone** (rechecked 2026-11-13). The data record's bundles (`local_only/tools/stage_online.sh`), unpacked into an empty folder with only `code/` and `recovery/` added, render all 22 figures of the paper and the supplement pixel-identical (0 differing pixels) to those in `figures/`.
+- **Online record alone** (rechecked 2026-11-13). The data record's bundles (`local_only/tools/stage_online.sh`), unpacked into an empty folder with only `code/` and `recovery/` added, render all 22 data figures of the paper and the supplement pixel-identical (0 differing pixels) to those in `figures/`. The paper's Figure 14 (`attention_control.pdf`, added 2026-11-16) is a diagram drawn from schematic values and needs only the code.
 - **Recovery tables.** The legacy-sampler comparison columns were removed.
 
 ## Licences

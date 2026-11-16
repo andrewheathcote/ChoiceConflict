@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "If you use this code or the supplement, please cite the paper and this software record."
 title: "ChoiceConflict: code and supplement for 'Racing to Control Decision Conflict'"
-version: 1.1.0
+version: 1.2.0
 license: GPL-3.0-or-later
 repository-code: "https://github.com/andrewheathcote/ChoiceConflict"
 identifiers:

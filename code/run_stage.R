@@ -34,6 +34,7 @@ switch(stage,
                run("07_figures/plot_models6_mix.R", "Stroop", "ANT", "RDM")                       # paper 11
                run("07_figures/plot_mech_null_grid.R")                                            # paper 12
                run("07_figures/plot_effects.R")                                                   # paper 13
+               run("07_figures/plot_attention.R")                                                 # paper 14 (diagram)
                run("07_figures/plot_choice.R", "plot"); run("07_figures/plot_choice_types.R")     # paper 4, S6; S7
                run("08_recovery/conflict/recovery_figs.R"); run("08_recovery/choice/score.R") },  # S8, S9; S10
   stop("unknown stage ", stage, ": data, classify, select, floors, predict, figures"))
